@@ -1,0 +1,75 @@
+# ----------------------------------------
+# Python
+# ----------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environment
+venv/
+env/
+.virtualenv/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+*.so
+
+# ----------------------------------------
+# FastAPI / Uvicorn
+# ----------------------------------------
+# Arquivos de log
+*.log
+logs/
+
+# Cache do servidor
+.reload*
+
+# ----------------------------------------
+# Dependências / Pacotes
+# ----------------------------------------
+pip-wheel-metadata/
+pip-log.txt
+
+# Poetry
+.poetry/
+
+# ----------------------------------------
+# Testes
+# ----------------------------------------
+.coverage
+htmlcov/
+pytest_cache/
+.cache/
+
+# ----------------------------------------
+# VSCode / IDEs
+# ----------------------------------------
+.vscode/
+.idea/
+
+# ----------------------------------------
+# Docker
+# ----------------------------------------
+# Pastas ignoradas pelo Docker
+docker-data/
+tmp/
+*.pid
+
+# ----------------------------------------
+# Environment variables
+# ----------------------------------------
+.env
+.env.*
+!.env.example
+
+# ----------------------------------------
+# Outros
+# ----------------------------------------
+.DS_Store
+Thumbs.db
