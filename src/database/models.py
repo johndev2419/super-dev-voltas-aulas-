@@ -9,6 +9,7 @@ class Sabores(Base):
 
     id = Column(Integer, primary_key = True, autoincrement=True)
     sabor = Column(String(100), nullable=False)
+    tamanho = Column(String(100), nullable=False)
 
 class Cliente(Base):
 
