@@ -4,17 +4,18 @@ use pizza;
 
 create table sabores(
 id int primary key auto_increment,
-sabor varchar(100)
+sabor varchar(100),
+tamanho varchar(100)
 
 );
 
 INSERT INTO sabores (sabor)
 VALUES 
-('calabresa'),
-('chocolate'),
-('frango com catipiry'),
-('baiana'),
-('portuguesa');
+('calabresa', 'P'),
+('chocolate', 'M'),
+('frango com catipiry','G'),
+('baiana','P'),
+('portuguesa', 'G');
 
 select * from sabores;
 
