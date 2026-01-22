@@ -14,15 +14,13 @@ def listar_todos(db:Session = Depends(get_db)):
     return pedido
 
 #cadastrar
-@app.post("api/v1/sabores",tags=["Sabores"])
+@app.post("/api/v1/sabores",tags=["Sabores"])
 def cadastrar_sabor(pedido:SaboresCriar,db:Session = Depends(get_db)):
-    pizza_repositorio.cadastrar(db, pedido.sabor,pedido.tamanho)
-    return{
-        "Status":"Ok"
-    }
+    pedido = pizza_repositorio.cadastrar(db, pedido.sabor,pedido.tamanho)
+    return pedido
 
 #editar
-@app.put("api/v1/sabores/{id}",tags=["Sabores"])
+@app.put("/api/v1/sabores/{id}",tags=["Sabores"])
 def alterar_sabor(id:int, pedido:SaboresEditar,db:Session = Depends(get_db)):
     linhas_afetadas = pizza_repositorio.editar(db,id,pedido.sabor,pedido.tamanho)
     if linhas_afetadas !=1:
@@ -32,7 +30,7 @@ def alterar_sabor(id:int, pedido:SaboresEditar,db:Session = Depends(get_db)):
     }
 
 #apagar
-@app.delete("api/v1/sabores/{id}",tags=["Sabores"])
+@app.delete("/api/v1/sabores/{id}",tags=["Sabores"])
 def apagar_sabor(id:int,db:Session = Depends(get_db)):
     linhas_afetadas = pizza_repositorio.apagar(db,id)
     if linhas_afetadas !=1:
@@ -42,7 +40,7 @@ def apagar_sabor(id:int,db:Session = Depends(get_db)):
     }
 
 #obter por id
-@app.get("api/v1/sabores/{id}",tags=["Sabores"])
+@app.get("/api/v1/sabores/{id}",tags=["Sabores"])
 def obter_sabor_por_id(id:int,db:Session = Depends(get_db)):
     pedido = pizza_repositorio.obter_por_id(db,id)
     if pedido is None:
