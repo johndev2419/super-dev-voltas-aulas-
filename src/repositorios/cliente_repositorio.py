@@ -11,4 +11,4 @@ def cadastrar(db: Session, nome: str, cpf:str, id_sabor: int, tamanho: str):
 
 
 def editar(db: Session, id: int, nome: str, id_sabor: int, tamanho: str ):
-    
+    pass
