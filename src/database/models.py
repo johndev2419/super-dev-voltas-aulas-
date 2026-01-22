@@ -10,7 +10,7 @@ class Sabores(Base):
     id = Column(Integer, primary_key = True, autoincrement=True)
     sabor = Column(String(100), nullable=False)
 
-class Clientes(Base):
+class Cliente(Base):
 
     __tablename__="cliente"
 
