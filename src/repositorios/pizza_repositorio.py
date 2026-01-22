@@ -32,6 +32,11 @@ def apagar(db:Session, id:int) -> int:
     db.commit()
     return 1
 
+def obter_todos(db:Session):
+    pedido = db.query(Sabores).all()
+    return pedido
+
+
 def obter_por_id(db:Session, id:int):
     pedido = db.query(Sabores).filter(Sabores.id == id).first()
     return pedido
