@@ -3,6 +3,14 @@ from src.database.models import Cliente
 
 
 
+
+
+
+def obter_todos(db: Session):
+     clientes = db.query(Cliente).options(contains_eager(Cliente.sabor)).all()
+     return clientes
+
+
 def cadastrar(db: Session, nome: str, cpf:str, id_sabor: int, tamanho: str):
     cliente = Cliente(nome=nome, cpf=cpf, id_sabor=id_sabor, tamanho = tamanho)
     db.add(cliente)
@@ -31,9 +39,9 @@ def apagar(db:Session,id: int):
     return 1
 
 
-def obter_todos(db: Session):
-     clientes = db.query(Cliente).options(contains_eager(Cliente.sabor)).all()
-     return clientes
+
+
+
 
 
 
