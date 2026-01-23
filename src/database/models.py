@@ -11,6 +11,8 @@ class Sabores(Base):
     sabor = Column(String(100), nullable=False)
     tamanho = Column(String(1), nullable=False)
 
+    cliente = relationship("cliente", back_populates="sabor")
+
 class Cliente(Base):
 
     __tablename__="cliente"
@@ -22,4 +24,4 @@ class Cliente(Base):
 
     id_sabor = Column(Integer, ForeignKey("sabores.id") )
 
-    sabor = relationship("sabores", back_populates="cliente")
+    sabor = relationship("sabores", back_populates="clientes")

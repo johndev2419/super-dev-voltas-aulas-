@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session, contains_eager
 from src.database.models import Cliente
 
 
+
 def cadastrar(db: Session, nome: str, cpf:str, id_sabor: int, tamanho: str):
     cliente = Cliente(nome=nome, cpf=cpf, id_sabor=id_sabor, tamanho = tamanho)
     db.add(cliente)
@@ -31,8 +32,10 @@ def apagar(db:Session,id: int):
 
 
 def obter_todos(db: Session):
-    cliente = db.query(Cliente).options(contains_eager(Cliente.sabor)).all()
-    return cliente
+     clientes = db.query(Cliente).options(contains_eager(Cliente.sabor)).all()
+     return clientes
+
+
 
 
 def obter_por_id(db:Session, id: int):
