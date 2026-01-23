@@ -9,7 +9,7 @@ class Sabores(Base):
 
     id = Column(Integer, primary_key = True, autoincrement=True)
     sabor = Column(String(100), nullable=False)
-    tamanho = Column(String(100), nullable=False)
+    tamanho = Column(String(1), nullable=False)
 
 class Cliente(Base):
 
@@ -18,6 +18,7 @@ class Cliente(Base):
     id = Column(Integer, primary_key = True, autoincrement=True)
     nome = Column(String(150), nullable=False)
     cpf = Column(String(14), nullable=False)
+    tamanho = Column(String(1), nullable=False)
 
     id_sabor = Column(Integer, ForeignKey("sabores.id") )
 

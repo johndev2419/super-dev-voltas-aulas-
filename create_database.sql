@@ -5,16 +5,16 @@ use pizza;
 create table sabores(
 id int primary key auto_increment,
 sabor varchar(100),
-tamanho varchar(100)
+tamanho varchar(1)
 
 );
 
-INSERT INTO sabores (sabor)
+INSERT INTO sabores (sabor, tamanho)
 VALUES 
-('calabresa', 'P'),
-('chocolate', 'M'),
-('frango com catipiry','G'),
-('baiana','P'),
+('calabresa', 'p'),
+('chocolate','M'),
+('frango com catipiry', 'G'),
+('baiana', 'P'),
 ('portuguesa', 'G');
 
 select * from sabores;
@@ -36,7 +36,8 @@ insert into CLIENTE (nome, cpf, id_sabor) values ('Maria leide da silva', '123.1
 select * from CLIENTE;
 
 
-SELECT SABORES.SABOR, CLIENTE.NOME FROM CLIENTE INNER JOIN SABORES ON (CLIENTE.ID_SABOR = SABORES.ID );
+SELECT SABORES.SABOR, CLIENTE.NOME, SABORES.TAMANHO FROM CLIENTE INNER JOIN SABORES ON (CLIENTE.ID_SABOR = SABORES.ID );
+
 
 
 
