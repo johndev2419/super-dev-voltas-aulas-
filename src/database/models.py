@@ -20,8 +20,11 @@ class Cliente(Base):
     id = Column(Integer, primary_key = True, autoincrement=True)
     nome = Column(String(150), nullable=False)
     cpf = Column(String(14), nullable=False)
-    tamanho = Column(String(1), nullable=False)
+    
 
     id_sabor = Column(Integer, ForeignKey("sabores.id") )
 
     sabor = relationship("Sabores", back_populates="cliente")
+
+
+    # brave 

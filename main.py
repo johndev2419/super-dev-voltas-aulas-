@@ -60,16 +60,16 @@ def obter_todos_clientes(db: Session = Depends (get_db)):
 
 @app.post("/api/v1/cliente", tags=["Clientes"])
 def cadastrar_clientes(cliente: ClienteCriar, db: Session = Depends(get_db)):
-    cliente_repositorio.cadastrar(db,cliente.nome, cliente.cpf, cliente.id_sabor, cliente.tamanho)
+    cliente_repositorio.cadastrar(db,cliente.nome, cliente.cpf, cliente.id_sabor)
     return {"status" : "ok"}
 
 
 @app.put("/api/v1/cliente/{id}", tags=["Clientes"])
 def editar_clientes(cliente: ClienteEditar, id: int, db: Session = Depends(get_db)):
-    linhas_afetadas = cliente_repositorio.editar(db, id, cliente.nome,cliente.cpf,cliente.id_sabor, cliente.tamanho)
+    linhas_afetadas = cliente_repositorio.editar(db, id, cliente.nome,cliente.cpf,cliente.id_sabor  )
     if linhas_afetadas !=1 :
         raise HTTPException(status_code=404, detail="Cliente não encontrado")
-    return{
+    return{     
         "status" : "ok"
     }
 

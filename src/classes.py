@@ -13,11 +13,10 @@ class ClienteCriar(BaseModel):
     nome:str
     cpf:str
     id_sabor:int
-    tamanho: str
-    
+   
 
 class ClienteEditar(BaseModel):
     nome:str
     cpf:str
     id_sabor:int
-    tamanho: str 
+   
